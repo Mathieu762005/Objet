@@ -6,27 +6,28 @@ class Character
 
     // mise en place des getters & setters
 
-    public function getvie()
+    public function getVie()
     {
         return $this->vie;
     }
-    public function setvie(int $vie)
+    public function setVie(int $vie)
     {
         $this->vie = $vie;
     }
 
-    public function getmagie()
+    public function getMagie()
     {
         return $this->magie;
     }
-    public function setmagie(int $magie)
+    public function setMagie(int $magie)
     {
         $this->magie = $magie;
     }
 
     public function __construct(int $vie, int $magie)
     {
-        $this->setvie($vie);
-        $this->setmagie($magie);
+        $this->setVie($vie);
+        $this->setMagie($magie);
     }
+
 }

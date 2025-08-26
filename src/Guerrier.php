@@ -1,54 +1,68 @@
 <?php
 require_once "Character.php";
 
-class Guerrier
+class Guerrier extends Character
 {
-    private $arme;
-    private $domageArme;
-    private $bouclier;
-    private $valeurBouclier;
+    private string $arme;
+    private int $degatArme;
+    private string $bouclier;
+    private int $valeurBouclier;
 
-    public function getarme()
+    public function getArme()
     {
         return $this->arme;
     }
-    public function setarme(int $arme)
+    public function setArme(string $arme)
     {
         $this->arme = $arme;
     }
 
-    public function getdomageArme()
+    public function getDegatArme()
     {
-        return $this->domageArme;
+        return $this->degatArme;
     }
-    public function setdomageArme(int $domageArme)
+    public function setDegatArme(int $degatArme)
     {
-        $this->domageArme = $domageArme;
+        $this->degatArme = $degatArme;
     }
 
-    public function getbouclier()
+    public function getBouclier()
     {
         return $this->bouclier;
     }
-    public function setbouclier(int $bouclier)
+    public function setBouclier(string $bouclier)
     {
         $this->bouclier = $bouclier;
     }
 
-    public function getvaleurBouclier()
+    public function getValeurBouclier()
     {
         return $this->valeurBouclier;
     }
-    public function setvaleurBouclier(int $valeurBouclier)
+    public function setValeurBouclier(int $valeurBouclier)
     {
         $this->valeurBouclier = $valeurBouclier;
     }
 
-    public function __construct($arme, $domageArme, $bouclier, $valeurBouclier)
+    public function __construct($vie, $magie, $arme, $degatArme, $bouclier, $valeurBouclier)
     {
-        $this->setarme($arme);
-        $this->setdomageArme($domageArme);
-        $this->setbouclier($bouclier);
-        $this->setvaleurBouclier($valeurBouclier);
+        parent::__construct($vie, $magie);
+
+        $this->setArme($arme);
+        $this->setDegatArme($degatArme);
+        $this->setBouclier($bouclier);
+        $this->setValeurBouclier($valeurBouclier);
+    }
+
+    public function attaque()
+    {
+        return $this->getDegatArme();
+    }
+
+    public function getDomage($domage, $vie, $valeurBouclier, $degatArme)
+    {
+        $vieTotal = $vie + $valeurBouclier;
+        $domage = $vieTotal - $degatArme;
+        return $domage;
     }
 }
