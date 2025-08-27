@@ -1,5 +1,4 @@
 <?php
-require_once "Character.php";
 
 class Guerrier extends Character
 {
@@ -44,13 +43,12 @@ class Guerrier extends Character
         $this->valeurBouclier = $valeurBouclier;
     }
 
-    public function __construct($vie, $magie, $arme, $degatArme, $bouclier, $valeurBouclier)
+    public function __construct($bouclier, $arme, $vie, $magie, $degatArme, $valeurBouclier)
     {
-        parent::__construct($vie, $magie);
-
-        $this->setArme($arme);
-        $this->setDegatArme($degatArme);
         $this->setBouclier($bouclier);
+        $this->setArme($arme);
+        parent::__construct($vie, $magie);
+        $this->setDegatArme($degatArme);
         $this->setValeurBouclier($valeurBouclier);
     }
 
@@ -59,10 +57,9 @@ class Guerrier extends Character
         return $this->getDegatArme();
     }
 
-    public function getDomage($domage, $vie, $valeurBouclier, $degatArme)
+    public function getDomage($domage)
     {
-        $vieTotal = $vie + $valeurBouclier;
-        $domage = $vieTotal - $degatArme;
-        return $domage;
+        $vieTotal = $this->getVie() + $this->getvaleurBouclier();
+        $domage = $vieTotal - $this->getdegatArme();
     }
 }

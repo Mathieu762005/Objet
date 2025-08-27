@@ -1,5 +1,4 @@
 <?php
-require_once "Character.php";
 
 class Orc extends Character
 {
@@ -31,6 +30,14 @@ class Orc extends Character
         $this->setDegatMin($degatMin);
         $this->setDegatArme($degatMax);
     }
-}
 
-echo "les degat minimum de l'orc {$degatMin}. Les degat Maximum de l'orc {$degatMax}.";
+    public function attaque($degatMin, $degatMax)
+    {
+        $nombreAleatoire = rand($degatMin, $degatMax);
+        return $nombreAleatoire;
+    }
+
+    public function getDomage()
+    {
+    }
+}

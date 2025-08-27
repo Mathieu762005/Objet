@@ -1,0 +1,22 @@
+
+main {
+    height: 90vh;
+    background-color: rgb(193, 109, 0);
+}
+
+footer {
+    height: 10vh;
+    background-color: rgb(174, 165, 153);
+}
+
+.creerGuerrier {
+    height: 100%;
+}
+
+.display {
+    height: 90%;
+}
+
+.combat {
+    height: 10%;
+}
