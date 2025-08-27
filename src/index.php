@@ -33,13 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['lancement'])) {
-        $character = new Character(100, 50, 5);
-        $character->nbAleatoire();
-        $_SESSION['character'] = $character;
-    }
-}
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     if (isset($_POST['lancement'])) {
+//         $character = new Character(100, 50,);
+//         $character->nbAleatoire();
+//         $_SESSION['character'] = $character;
+//     }
+// }
 
 // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //     if (isset($_POST['combat'])) {
@@ -104,11 +104,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
         <div class="d-flex align-items-center">
-            <?php if ($character): ?>
-                <p class="fw-bold fs-1">
-                    <?= $character->getNb() % 2 === 0 ? "Le guerrier commence !" : "L'orc commence !" ?>
-                </p>
-            <?php endif; ?>
         </div>
         <div class="ms-5  d-grid gap-2 d-md-flex justify-content-md-end align-items-center">
             <form method="POST">
