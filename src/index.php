@@ -33,19 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     if (isset($_POST['lancement'])) {
-//         $character = new Character(100, 50,);
-//         $character->nbAleatoire();
-//         $_SESSION['character'] = $character;
-//     }
-// }
-
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     if (isset($_POST['combat'])) {
-//     }
-// }
-
 ?>
 
 <!DOCTYPE html>
@@ -85,9 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php }; ?>
         </div>
         <div class="combat text-center">
-            <form method="POST">
-                <input type="hidden" name="action" value="">
-                <button class="btn btn-primary me-md-2 fs-3 fw-bold" type="submit" name="combat">Combat 🔥</button>
+            <form method="GET" action="combat.php">
+                <button class="btn btn-primary me-md-2 fs-3 fw-bold" type="submit">Combat 🔥</button>
             </form>
         </div>
     </main>

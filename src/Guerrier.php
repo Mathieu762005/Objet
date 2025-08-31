@@ -1,4 +1,5 @@
 <?php
+require_once "Character.php";
 
 class Guerrier extends Character
 {
@@ -57,9 +58,15 @@ class Guerrier extends Character
         return $this->getDegatArme();
     }
 
-    public function getDomage($domage)
-    {
-        $vieTotal = $this->getVie() + $this->getvaleurBouclier();
-        $domage = $vieTotal - $this->getdegatArme();
-    }
+public function getdomage(int $degats)
+{
+    // Le bouclier absorbe une partie des dégâts
+    $absorption = min($degats, $this->valeurBouclier);
+    $degatsRestants = $degats - $absorption;
+
+    // Mise à jour de la vie
+    $nouvelleVie = max(0, $this->getVie() - $degatsRestants);
+    $this->setVie($nouvelleVie);
+}
+
 }
