@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main class="row justify-content-center">
         <div class="display d-flex justify-content-md-between align-items-center">
             <?php if (isset($guerrier)) { ?>
-                <div class="statGuerrier p-5">
+                <div class="statGuerrier p-5 text-white">
                     <p>Bouclier : <?= htmlspecialchars($guerrier->getBouclier()) ?></p>
                     <p>Arme : <?= htmlspecialchars($guerrier->getArme()) ?></p>
                     <p>Vie : <?= htmlspecialchars($guerrier->getVie()) ?></p>
@@ -60,10 +60,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <p>Valeur Bouclier : <?= htmlspecialchars($guerrier->getValeurBouclier()) ?></p>
                 </div>
             <?php }; ?>
-            <div>
+            <div class="centre d-flex justify-content-md-between align-items-end mx-auto">
+                <?php if (isset($guerrier)) { ?>
+                <img src="assets/img/png-clipart-illustration-animal-animated-cartoon-fiction-character-dwarf-warrior-cartoon-fictional-character-Photoroom.png" width="370     " alt="">
+                <?php }; ?>
+                <?php if (isset($orc)) { ?>
+                <img src="assets/img/png-clipart-orc-fantasy-barbarian-club-monster-green-skin-armor-rpg-Photoroom.png" width="370" alt="">
+                <?php }; ?>
             </div>
             <?php if (isset($orc)) { ?>
-                <div class="statOrc p-5">
+                <div class="statOrc p-5 text-white">
                     <p>Vie : <?= htmlspecialchars($orc->getVie()) ?></p>
                     <p>Magie : <?= htmlspecialchars($orc->getMagie()) ?></p>
                     <p>degat Min : <?= htmlspecialchars($orc->getDegatMin()) ?></p>
